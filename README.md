@@ -3,6 +3,19 @@
 
 **Skriv din rapport här!**
 
+
+1. By editing the following stirng in strings.xml I can change the name of my app.
+
+``` <string name="app_name">WebView_Assignment_2</string> ```
+
+2. Adding the following line of code adds the utilization of a permission which in turn grants the app access to the internet.
+
+``` <uses-permission android:name="android.permission.INTERNET"/> ```
+
+3.
+
+
+
 _Du kan ta bort all text som finns sedan tidigare_.
 
 ## Följande grundsyn gäller dugga-svar:
