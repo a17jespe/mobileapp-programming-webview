@@ -12,7 +12,9 @@
 
 ``` <uses-permission android:name="android.permission.INTERNET"/> ```
 
-3.
+3. By swapping out TextView with a WebView element I can enable internet access.
+
+![](3_Webview)
 
 
 
