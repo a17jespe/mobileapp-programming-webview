@@ -34,9 +34,21 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        WebView my_WebView = findViewById(R.id.my_webview);
-        setContentView(my_WebView);
-        my_WebView.loadUrl("https://student.his.se");
+
+
+        WebView my_WebView = findViewById(R.id.my_webview); //Connects my_webview to the content webview ID
+
+        if(my_WebView.getParent() != null) { // Fixes crash, reason for crash TBD
+            ((android.view.ViewGroup) my_WebView.getParent()).removeView(my_WebView);
+        }
+
+        setContentView(my_WebView); //Brings up the webview.
+        my_WebView.loadUrl("https://student.his.se"); // Loads the stated URL
+
+        my_WebView.getSettings().getJavaScriptEnabled(); //Enables javascript in my_WebView
+
+
+
 
         /*
         * Rename your App. Tip: Values->Strings
