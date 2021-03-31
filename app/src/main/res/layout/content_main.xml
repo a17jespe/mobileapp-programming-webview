@@ -8,6 +8,7 @@
     tools:showIn="@layout/activity_main">
 
     <WebView
+        android:id="@+id/my_webview"
         android:layout_width="456dp"
         android:layout_height="656dp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -12,10 +12,11 @@
 
 ``` <uses-permission android:name="android.permission.INTERNET"/> ```
 
-3. By swapping out TextView with a WebView element I can enable internet access.
+3. By swapping out TextView with a WebView element I can enable webpage access for future use.
 
 ![](3_Webview.png)
 
+4.
 
 
 _Du kan ta bort all text som finns sedan tidigare_.
