@@ -38,14 +38,17 @@ public class MainActivity extends AppCompatActivity {
 
         WebView my_WebView = findViewById(R.id.my_webview); //Connects my_webview to the content webview ID
 
-        if(my_WebView.getParent() != null) { // Fixes crash, reason for crash TBD
-            ((android.view.ViewGroup) my_WebView.getParent()).removeView(my_WebView);
-        }
+//        if(my_WebView.getParent() != null) { // Fixes crash, reason for crash TBD
+//            ((android.view.ViewGroup) my_WebView.getParent()).removeView(my_WebView);
+//        }
+//
+//        setContentView(my_WebView); //Brings up the webview. // Caused crash
 
-        setContentView(my_WebView); //Brings up the webview.
-        my_WebView.loadUrl("https://student.his.se"); // Loads the stated URL
+          my_WebView.getSettings().getJavaScriptEnabled(); //Enables javascript in my_WebView
+          my_WebView.loadUrl("https://student.his.se"); // Loads the stated URL
 
-        my_WebView.getSettings().getJavaScriptEnabled(); //Enables javascript in my_WebView
+
+
 
 
 
@@ -75,14 +78,14 @@ public class MainActivity extends AppCompatActivity {
            one (1) screenshot showing your external web page.
         */
 
-//        FloatingActionButton fab = findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
     }
 
     @Override
