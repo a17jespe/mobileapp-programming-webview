@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        // The following two major functions are required for eachother currently as the second one causes a crash and the first fixes it.
+
 //        if(my_WebView.getParent() != null) { // Fixes crash, reason for crash TBD
 //            ((android.view.ViewGroup) my_WebView.getParent()).removeView(my_WebView);
 //        }
