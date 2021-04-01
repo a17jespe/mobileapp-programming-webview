@@ -36,19 +36,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        WebView my_WebView = findViewById(R.id.my_webview); //Connects my_webview to the content webview ID
 
 //        if(my_WebView.getParent() != null) { // Fixes crash, reason for crash TBD
 //            ((android.view.ViewGroup) my_WebView.getParent()).removeView(my_WebView);
 //        }
 //
 //        setContentView(my_WebView); //Brings up the webview. // Caused crash
-
-          my_WebView.getSettings().getJavaScriptEnabled(); //Enables javascript in my_WebView
-          my_WebView.loadUrl("https://student.his.se"); // Loads the stated URL
-
-
-
 
 
 
@@ -104,13 +97,19 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_external_web) {
-            Log.d("==>","Will display external web page");
-            return true;
+
+            WebView my_WebView = findViewById(R.id.my_webview); //Connects my_webview to the content webview ID
+            my_WebView.getSettings().getJavaScriptEnabled(); //Enables javascript in my_WebView
+            my_WebView.loadUrl("https://student.his.se"); // Loads external URL
+
         }
 
         if (id == R.id.action_internal_web) {
-            Log.d("==>","Will display internal web page");
-            return true;
+
+            WebView my_WebView = findViewById(R.id.my_webview); //Connects my_webview to the content webview ID
+            my_WebView.getSettings().getJavaScriptEnabled(); //Enables javascript in my_WebView
+            my_WebView.loadUrl("file:///android_asset/about.html"); // Loads internal URL
+
         }
 
         return super.onOptionsItemSelected(item);
