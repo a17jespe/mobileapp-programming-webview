@@ -37,25 +37,29 @@
 External website:
 
 
-```if (id == R.id.action_external_web) {
+            ```
+            if (id == R.id.action_external_web) {
 
                WebView my_WebView = findViewById(R.id.my_webview); //Connects my_webview to the content webview ID
                my_WebView.getSettings().getJavaScriptEnabled(); //Enables javascript in my_WebView
                my_WebView.loadUrl("https://student.his.se"); // Loads external URL
 
-           }```
+           }
+           ```
 
 
 Internal website:
 
 
-           ```if (id == R.id.action_internal_web) {
+           ```
+           if (id == R.id.action_internal_web) {
 
                WebView my_WebView = findViewById(R.id.my_webview); //Connects my_webview to the content webview ID
                my_WebView.getSettings().getJavaScriptEnabled(); //Enables javascript in my_WebView
                my_WebView.loadUrl("file:///android_asset/about.html"); // Loads internal HTML file
 
-           }```
+           }
+           ```
 
 
 _Du kan ta bort all text som finns sedan tidigare_.
