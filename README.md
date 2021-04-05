@@ -62,6 +62,22 @@ Internal website:
            ```
 
 
+6. Here are the two pages
+
+
+Internal:
+
+
+![](6_Internal.png)
+
+External:
+
+
+![](6_External.png)
+
+
+
+
 _Du kan ta bort all text som finns sedan tidigare_.
 
 ## Följande grundsyn gäller dugga-svar:
