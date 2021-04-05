@@ -16,7 +16,18 @@
 
 ![](3_Webview.png)
 
-4.
+4. Through utilization of the following lines of code I can do the following:
+
+ • Designate which webview to utilize:
+            ```WebView my_WebView = findViewById(R.id.my_webview);```
+
+ • Enable javascript for that webview:
+            ```my_WebView.getSettings().getJavaScriptEnabled();```
+
+ • And last, but not least, load an external URL:
+            ```my_WebView.loadUrl("https://student.his.se");```
+
+
 
 
 _Du kan ta bort all text som finns sedan tidigare_.

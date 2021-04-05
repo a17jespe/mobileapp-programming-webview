@@ -77,8 +77,9 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                WebView my_WebView = findViewById(R.id.my_webview); //Connects my_webview to the content webview ID
+                my_WebView.getSettings().getJavaScriptEnabled(); //Enables javascript in my_WebView
+                my_WebView.loadUrl("https://mail.his.se"); // Loads external URL
             }
         });
     }
@@ -110,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
 
             WebView my_WebView = findViewById(R.id.my_webview); //Connects my_webview to the content webview ID
             my_WebView.getSettings().getJavaScriptEnabled(); //Enables javascript in my_WebView
-            my_WebView.loadUrl("file:///android_asset/about.html"); // Loads internal URL
+            my_WebView.loadUrl("file:///android_asset/about.html"); // Loads internal HTML file
 
         }
 
