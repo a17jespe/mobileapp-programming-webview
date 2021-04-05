@@ -1,4 +1,3 @@
-
 # Rapport
 
 ### By editing the following string in strings.xml I can change the name of my app.
