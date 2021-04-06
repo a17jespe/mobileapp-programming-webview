@@ -17,13 +17,22 @@ import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
+    @SuppressLint("SetJavaScriptEnabled")
     public void showExternalWebPage(){
-        // TODO: Add your code for showing external web page here
+
+        WebView my_WebView = findViewById(R.id.my_webview); //Connects my_webview to the content webview ID
+        my_WebView.getSettings().setJavaScriptEnabled(true); //Enables javascript in my_WebView
+        my_WebView.loadUrl("https://student.his.se"); // Loads external URL
 
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     public void showInternalWebPage(){
-        // TODO: Add your code for showing internal web page here
+
+        WebView my_WebView = findViewById(R.id.my_webview); //Connects my_webview to the content webview ID
+        my_WebView.getSettings().setJavaScriptEnabled(true); //Enables javascript in my_WebView
+        my_WebView.loadUrl("file:///android_asset/about.html"); // Loads internal HTML file
+
     }
 
     private WebView my_WebView;
@@ -60,26 +69,15 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("SetJavaScriptEnabled")
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_external_web) {
-
-            WebView my_WebView = findViewById(R.id.my_webview); //Connects my_webview to the content webview ID
-            my_WebView.getSettings().setJavaScriptEnabled(true); //Enables javascript in my_WebView
-            my_WebView.loadUrl("https://student.his.se"); // Loads external URL
-
+        showExternalWebPage(); // Run function to show external webpage.
         }
 
         if (id == R.id.action_internal_web) {
-
-            WebView my_WebView = findViewById(R.id.my_webview); //Connects my_webview to the content webview ID
-            my_WebView.getSettings().setJavaScriptEnabled(true); //Enables javascript in my_WebView
-            my_WebView.loadUrl("file:///android_asset/about.html"); // Loads internal HTML file
-
+        showInternalWebPage(); // Run function to show internal webpage.
         }
 
         return super.onOptionsItemSelected(item);
