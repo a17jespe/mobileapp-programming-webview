@@ -17,22 +17,6 @@ public class MainActivity extends AppCompatActivity {
 
     private WebView my_WebView;
 
-
-    @SuppressLint("SetJavaScriptEnabled")
-    public void showWebPage(String where){ //retrieve variable where
-
-        if (where == "external"){
-            my_WebView.loadUrl("https://student.his.se"); // Loads external URL
-        }
-
-        else if (where == "internal"){
-            my_WebView.loadUrl("file:///android_asset/about.html"); // Loads internal HTML file
-        }
-
-    }
-
-
-
     @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,13 +54,14 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_external_web) {
-        showWebPage("external"); // Run function and pass "external".
+            my_WebView.loadUrl("https://student.his.se"); // Loads external URL
         }
 
         if (id == R.id.action_internal_web) {
-        showWebPage("internal"); // Run function and pass "internal".
+            my_WebView.loadUrl("file:///android_asset/about.html"); // Loads internal HTML file
         }
 
         return super.onOptionsItemSelected(item);
     }
+
 }
