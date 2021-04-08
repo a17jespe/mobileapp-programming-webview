@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     public void showWebPage(String where){ //retrieve variable where
 
         WebView my_WebView = findViewById(R.id.my_webview); //Connects my_webview to the content webview ID
-        my_WebView.getSettings().setJavaScriptEnabled(true); //Enables javascript in my_WebView
 
         if (where == "external"){
             my_WebView.loadUrl("https://student.his.se"); // Loads external URL
@@ -41,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        WebView my_WebView = findViewById(R.id.my_webview); //Connects my_webview to the content webview ID
+        my_WebView.getSettings().setJavaScriptEnabled(true); //Enables javascript in my_WebView
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
