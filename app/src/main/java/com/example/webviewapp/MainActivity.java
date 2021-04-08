@@ -18,7 +18,7 @@ import androidx.appcompat.widget.Toolbar;
 public class MainActivity extends AppCompatActivity {
 
     @SuppressLint("SetJavaScriptEnabled")
-    public void showWebPage(String where){
+    public void showWebPage(String where){ //retrieve variable where
 
         WebView my_WebView = findViewById(R.id.my_webview); //Connects my_webview to the content webview ID
         my_WebView.getSettings().setJavaScriptEnabled(true); //Enables javascript in my_WebView
@@ -69,11 +69,11 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_external_web) {
-        showWebPage("external"); // Run function to show external webpage.
+        showWebPage("external"); // Run function and pass "external".
         }
 
         if (id == R.id.action_internal_web) {
-        showWebPage("internal"); // Run function to show internal webpage.
+        showWebPage("internal"); // Run function and pass "internal".
         }
 
         return super.onOptionsItemSelected(item);
