@@ -2,25 +2,24 @@ package com.example.webviewapp;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class MainActivity extends AppCompatActivity {
+
+    private WebView my_WebView;
+
 
     @SuppressLint("SetJavaScriptEnabled")
     public void showWebPage(String where){ //retrieve variable where
-
-        WebView my_WebView = findViewById(R.id.my_webview); //Connects my_webview to the content webview ID
 
         if (where == "external"){
             my_WebView.loadUrl("https://student.his.se"); // Loads external URL
@@ -32,8 +31,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private WebView my_WebView;
 
+
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,18 +41,17 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        WebView my_WebView = findViewById(R.id.my_webview); //Connects my_webview to the content webview ID
+        my_WebView = findViewById(R.id.my_webview); //Connects my_webview to the content webview ID
         my_WebView.getSettings().setJavaScriptEnabled(true); //Enables javascript in my_WebView
+
+        WebViewClient my_WebViewClient = new WebViewClient();
+        my_WebView.setWebViewClient(my_WebViewClient);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetJavaScriptEnabled")
             @Override
             public void onClick(View view) {
-                WebView my_WebView = findViewById(R.id.my_webview); //Connects my_webview to the content webview ID
-                WebViewClient my_WebViewClient = new WebViewClient();
-                my_WebView.setWebViewClient(my_WebViewClient);
-                my_WebView.getSettings().setJavaScriptEnabled(true); //Enables javascript in my_WebView
                 my_WebView.loadUrl("https://mail.his.se"); // Loads external URL
             }
         });
